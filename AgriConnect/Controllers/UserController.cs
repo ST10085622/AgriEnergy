@@ -5,6 +5,8 @@ namespace AgriEnergy.Controllers
 {
     public class UserController : Controller
     {
+        private AgriEnergyDB db = new AgriEnergyDB();
+
         // GET: Account/Login
         [HttpGet]
         public ActionResult Login()
