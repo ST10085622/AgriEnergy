@@ -1,4 +1,4 @@
-namespace AgriConnect
+namespace AgriEnergy
 {
     public class Program
     {

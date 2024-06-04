@@ -2,7 +2,7 @@ using AgriConnect.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace AgriConnect.Controllers
+namespace AgriEnergy.Controllers
 {
     public class HomeController : Controller
     {
