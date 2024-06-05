@@ -6,6 +6,13 @@ namespace AgriEnergy.Controllers
 {
     public class UserController : Controller
     {
+        private readonly AgriEnergyContext _context;
+
+        public UserController(AgriEnergyContext context)
+        {
+            _context = context;
+        }
+
         // GET: Account/Login
         [HttpGet]
         public ActionResult Login()
@@ -37,14 +44,6 @@ namespace AgriEnergy.Controllers
                 return View(model);
             }
         }
-        private readonly AgriEnergyContext _context;
-
-        public UserController(AgriEnergyContext context)
-        {
-            _context = context;
-        }
-
-       
 
         //this where i authenticate the user(s), the employee and farmers combined
         private bool AuthenticateUser(string username, string password)
