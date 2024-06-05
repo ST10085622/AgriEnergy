@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using AgriEnergy.Models; //importing the models to access the properties
+using AgriEnergy.Models;
+using AgriEnergy.Data; //importing the models to access the properties
 
 namespace AgriEnergy.Controllers
 {
@@ -36,12 +37,23 @@ namespace AgriEnergy.Controllers
                 return View(model);
             }
         }
+        private readonly AgriEnergyContext _context;
+
+        public UserController(AgriEnergyContext context)
+        {
+            _context = context;
+        }
+
+       
 
         //this where i authenticate the user(s), the employee and farmers combined
         private bool AuthenticateUser(string username, string password)
         {
             
-            return false;
+            var farmer = _context.Farmers.FirstOrDefault(f => f.Username == username && f.Password == password);
+            var employee = _context.Employees.FirstOrDefault(e => e.Username == username && e.Password == password);
+
+            return farmer != null || employee != null;
 
 
         }
