@@ -10,7 +10,7 @@ namespace AgriEnergy.Data
         {
             
         }
-
+        
 
         public DbSet<Employee> Employees { get; set; }
 
