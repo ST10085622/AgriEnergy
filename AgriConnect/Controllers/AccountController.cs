@@ -4,11 +4,11 @@ using AgriEnergy.Data; //importing the models to access the properties
 
 namespace AgriEnergy.Controllers
 {
-    public class UserController : Controller
+    public class AccountController : Controller
     {
         private readonly AgriEnergyContext _context;
 
-        public UserController(AgriEnergyContext context)
+        public AccountController(AgriEnergyContext context)
         {
             _context = context;
         }
